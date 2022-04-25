@@ -17,20 +17,19 @@ def main():
             # generate combinations
             combos = list(itertools.combinations(vSet, x))
             # for every combination
-            for item in combos:
-                l = []
+            for combo in combos:
+                l = set()
                 # get the vertices connected to each resulting vertex
                 # and add them to l
-                for entry in list(item):
+                for entry in list(combo):
                     for v in g[entry]:
-                        l.append(v)
-                    l.append(entry)
+                        l.add(v)
+                    l.add(entry)
                     # if all vertices are included in l
                     # return this specific combination
-                    if len(set(l)) == len(vSet): return list(item)
+                    if len(l) == len(vSet): return list(combo)
         return list(vSet)
     print(*exact())
 
 if __name__ == "__main__":
     main()
- 
