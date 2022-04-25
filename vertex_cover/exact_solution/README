@@ -1,0 +1,20 @@
+INPUT:
+First line = n = the number of inputs
+n lines = the vertex followed by each vertex connected to it
+example:
+
+OUTPUT:
+one of the possible solutions
+
+INPUT:
+5
+1 2 3 4
+2 1
+3 1
+4 1 5
+5 4
+
+OUTPUT:
+1 4
+OR
+1 5
