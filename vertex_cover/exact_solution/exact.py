@@ -19,7 +19,7 @@ def main():
             # for every combination
             for combo in combos:
                 l = set()
-                # get the vertices connected to each resulting vertex
+                # get the vertices connected to each generated vertex
                 # and add them to l
                 for entry in list(combo):
                     for v in g[entry]:
