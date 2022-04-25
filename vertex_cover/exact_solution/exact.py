@@ -14,13 +14,12 @@ def main():
         for x in range(1, len(vSet) + 1):
             combo = list(itertools.combinations(vSet, x))
             for item in combo:
-                l = []
+                l = set()
                 for entry in list(item):
                     for v in g[entry]:
-                        l.append(v)
-                    l.append(entry)
-                    if len(set(l)) == len(vSet): return list(item)
-        return list(vSet)
+                        l.add(v)
+                    l.add(entry)
+                if len(l) == len(vSet): return list(item)
     print(*exact())
 
 if __name__ == "__main__":

@@ -16,8 +16,6 @@ INPUT:
 
 OUTPUT:
 1 4
-OR
-1 5
 
 INPUT:
 4
@@ -37,4 +35,4 @@ INPUT
 4 3
 
 OUTPUT:
-1 2 3 4
+1 3
