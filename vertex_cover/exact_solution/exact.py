@@ -12,8 +12,7 @@ def main():
         g[node] = set()
         for x in range(1, len(edges)):
             g[node].add(int(edges[x]))
-            edgeC += 1
-    edgeC /= 2
+            edgeC += .5
     def exact():
         if edgeC == 0: return []
         # for every possible number of vertices
