@@ -1,18 +1,28 @@
 INPUT:
 First line = n = the number of inputs
-n lines = the vertex followed by each vertex connected to it
+n lines = the vertex as an integer 0...n-1 followed by each vertex connected to it
 example:
 
 OUTPUT:
 one of the possible solutions
+OR 
+There are no edges.
 
 INPUT:
-5
-1 2 3 4
-2 1
-3 1
-4 1 5
-5 4
+4
+0 1 2 3
+1 0 2
+2 0 1
+3 0
 
 OUTPUT:
-1 4
+0 1
+
+INPUT:
+3
+0
+1
+2
+
+OUTPUT:
+There are no edges.
