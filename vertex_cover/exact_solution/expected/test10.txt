@@ -1,0 +1,2 @@
+Min number: 2
+Vertices: 0 8

@@ -16,7 +16,7 @@ def main():
     def exact():
         if edgeC == 0: return []
         # for every possible number of vertices
-        for x in range(1, len(vSet)):
+        for x in range(1, len(vSet) + 1):
             # generate combinations
             combos = list(itertools.combinations(vSet, x))
             # for every combination
@@ -33,7 +33,9 @@ def main():
         return []
     res = exact()
     if len(res) == 0: print("There are no edges.")
-    else: print(*res)
+    else: 
+        print("Min number:", len(res))
+        print("Vertices:", *res)
 
 if __name__ == "__main__":
     main()
