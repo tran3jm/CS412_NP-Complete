@@ -1,3 +1,5 @@
+PROBLEM: Vertex covering -- returning the minimum number of vertexes it takes to cover every edge in the undirected graph
+
 INPUT:
 First line = n = the number of inputs
 n lines = the vertex as an integer 0...n-1 followed by each vertex connected to it
