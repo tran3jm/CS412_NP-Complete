@@ -1,4 +1,4 @@
-PROBLEM: Vertex covering -- returning the minimum number of vertexes it takes to cover every edge in the undirected graph
+PROBLEM: Vertex covering -- returning the minimum number of vertexes it takes to cover every edge in the undirected and unweighted graph
 
 INPUT:
 First line = n = the number of inputs
