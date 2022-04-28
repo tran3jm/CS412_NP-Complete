@@ -1,3 +1,12 @@
+"""
+The code takes n vertices with their associated edges. It then generates every possible combination
+of vertices, starting with groups of 2 and working up to groups of n-1. It then checks each individual
+combination to determine if it's the min cover. It does this by storing every edge associated with
+each vertex in the combination (without storing the same edge twice), 
+then compares the size of that set to the total number of edges. If it's equal, that particular 
+combination is returned as the min covering. 
+If there are no edges in the graph, it prints "There are no edges."
+"""
 import itertools
 def main():
     n = int(input()) # number of vertices in graph
@@ -16,7 +25,7 @@ def main():
     def exact():
         if edgeC == 0: return []
         # for every possible number of vertices
-        for x in range(1, len(vSet) + 1):
+        for x in range(1, len(vSet)):
             # generate combinations
             combos = list(itertools.combinations(vSet, x))
             # for every combination
@@ -30,7 +39,7 @@ def main():
                         if (v, entry) not in edgeSet: edgeSet.add((entry, v))
                     # return when length of edgeSet = # of edges
                     if len(edgeSet) == edgeC: return list(combo)
-        return []
+        return list(edgeSet)
     res = exact()
     if len(res) == 0: print("There are no edges.")
     else: 
