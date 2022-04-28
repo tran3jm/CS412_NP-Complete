@@ -2,6 +2,7 @@
 import random
 
 def generate():
+    counter = 0
     n = random.randrange(1, 20)
     d = {}
     for i in range(n):
@@ -16,6 +17,7 @@ def generate():
             rand = random.randrange(0, n)
 
             if j != rand and rand != i and i != j:
+                counter += 1
                 d[i].add(rand)
                 d[rand].add(i)
 
@@ -26,7 +28,7 @@ def generate():
             print(j,end=" ")
         
         print()
-
+    print(counter)
 
 def main():
     generate()
