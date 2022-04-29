@@ -1,4 +1,6 @@
 import itertools
+import time
+
 def main():
     n = int(input()) # number of vertices in graph
     g = {} # graph
@@ -31,11 +33,13 @@ def main():
                     # return when length of edgeSet = # of edges
                     if len(edgeSet) == edgeC: return list(combo)
         return []
+    start_time = time.time()
     res = exact()
     if len(res) == 0: print("There are no edges.")
     else: 
         print("Min number:", len(res))
         print("Vertices:", *res)
+    print("--- %s seconds ---" % (time.time() - start_time))
 
 if __name__ == "__main__":
     main()
