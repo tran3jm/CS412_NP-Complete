@@ -12,19 +12,19 @@ def main():
     n = int(input()) # number of vertices in graph
     g = {} # graph
     vSet = [] # set of all vertices in graph
-    edgeC = 0
+    edgeC = 0 # number of edges
     # setting up the graph and vertex set
     for _ in range(n):
         edges = input().split(" ")
         node = int(edges[0])
         vSet.append(node)
-        g[node] = set()
+        g[node] = set() # every vertex corresponds to a set of edges
         for x in range(1, len(edges)):
-            g[node].add(int(edges[x]))
-            edgeC += .5
+            g[node].add(int(edges[x])) # add edge
+            edgeC += .5 # don't count the same edge twice
     def exact():
-        if edgeC == 0: return []
-        # for every possible number of vertices
+        if edgeC == 0: return [] # no edges
+        # for every possible number of vertices 1 through n-1
         for x in range(1, len(vSet)):
             # generate combinations
             combos = list(itertools.combinations(vSet, x))
@@ -39,10 +39,10 @@ def main():
                         if (v, entry) not in edgeSet: edgeSet.add((entry, v))
                     # return when length of edgeSet = # of edges
                     if len(edgeSet) == edgeC: return list(combo)
-        return list(edgeSet)
+        return list(edgeSet) # all vertices required for solution
     res = exact()
     if len(res) == 0: print("There are no edges.")
-    else: 
+    else:
         print("Min number:", len(res))
         print("Vertices:", *res)
 

@@ -25,7 +25,9 @@ def main():
         return result
     res = approx()
     if len(res) == 0: print("There are no edges.")
-    else: print(*res)
+    else:
+        print("Min number:", len(res))
+        print("Vertices:", *res)
 
 if __name__ == "__main__":
     main()

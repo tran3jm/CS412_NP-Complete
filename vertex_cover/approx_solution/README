@@ -24,7 +24,10 @@ INPUT:
 3 0
 
 OUTPUT:
-0 1
+Min number: [min]
+Vertices: [solutions]
+OR 
+There are no edges.
 
 INPUT:
 3
