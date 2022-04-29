@@ -39,12 +39,16 @@ def main():
                         if (v, entry) not in edgeSet: edgeSet.add((entry, v))
                     # return when length of edgeSet = # of edges
                     if len(edgeSet) == edgeC: return list(combo)
-        return list(edgeSet) # all vertices required for solution
+        return list(edgeSet) # all vertices required for solution, shouldn't ever get to this line
     res = exact()
     if len(res) == 0: print("There are no edges.")
     else:
-        print("Min number:", len(res))
+        print("Min number:", len(res)) # this number should always at most be n-1
         print("Vertices:", *res)
 
 if __name__ == "__main__":
     main()
+"""
+Worst case: fully connected graph
+Best case: no edges
+"""
