@@ -11,10 +11,15 @@ def main():
             g[node].add(edges[x])
     def approx():
         visited = [False] * n
+        # find next edge
         for u in range(n):
+            # u must not be visited
             if not visited[u]:
+                # v is a vertex connected to u and must not be visited
                 for v in g[u]:
                     if not visited[v]:
+                        # if a u and v have been found and have not been visited then
+                        # we've found a new edge and we can add both to the visited list
                         visited[u] = True
                         visited[v] = True
                         break
