@@ -1,0 +1,2 @@
+Min number: 4
+Vertices: 0 4 5 7
