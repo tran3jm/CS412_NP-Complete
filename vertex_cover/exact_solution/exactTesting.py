@@ -22,11 +22,15 @@ def generate(num):
                 d[rand].add(i)
 
     print(n)
+    setCount = 1
     for i in d:
-        print(i,end=" ")
+        if len(d[i]) == 0: print(i,end="")
+        else: print(i,end=" ")
         for j in d[i]:
-            print(j,end=" ")
-        
+            if setCount == len(d[i]): print(j,end="")
+            else: print(j,end=" ")
+            setCount+=1
+        setCount = 1
         print()
     # print(counter)
 

@@ -1,22 +1,33 @@
+"""
+The code takes n vertices with their associated edges. It then generates every possible combination
+of vertices, starting with groups of 2 and working up to groups of n-1. It then checks each individual
+combination to determine if it's the min cover. It does this by storing every edge associated with
+each vertex in the combination (without storing the same edge twice), 
+then compares the size of that set to the total number of edges. If it's equal, that particular 
+combination is returned as the min covering. 
+If there are no edges in the graph, it prints "There are no edges."
+"""
 import itertools
+import time
+
 def main():
     n = int(input()) # number of vertices in graph
     g = {} # graph
     vSet = [] # set of all vertices in graph
-    edgeC = 0
+    edgeC = 0 # number of edges
     # setting up the graph and vertex set
     for _ in range(n):
-        edges = input().split(" ")
+        edges = [int(x) for x in input().split()]
         node = int(edges[0])
         vSet.append(node)
-        g[node] = set()
+        g[node] = set() # every vertex corresponds to a set of edges
         for x in range(1, len(edges)):
-            g[node].add(int(edges[x]))
-            edgeC += .5
+            g[node].add(int(edges[x])) # add edge
+            edgeC += .5 # don't count the same edge twice
     def exact():
-        if edgeC == 0: return []
-        # for every possible number of vertices
-        for x in range(1, len(vSet) + 1):
+        if edgeC == 0: return [] # no edges
+        # for every possible number of vertices 1 through n-1
+        for x in range(1, len(vSet)):
             # generate combinations
             combos = list(itertools.combinations(vSet, x))
             # for every combination
@@ -31,11 +42,17 @@ def main():
                     # return when length of edgeSet = # of edges
                     if len(edgeSet) == edgeC: return list(combo)
         return []
+    start_time = time.time()
     res = exact()
     if len(res) == 0: print("There are no edges.")
-    else: 
-        print("Min number:", len(res))
+    else:
+        print("Min number:", len(res)) # this number should always at most be n-1
         print("Vertices:", *res)
+    print("--- %s seconds ---" % (time.time() - start_time))
 
 if __name__ == "__main__":
     main()
+"""
+Worst case: fully connected graph
+Best case: no edges
+"""
