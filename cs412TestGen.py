@@ -1,9 +1,9 @@
 
 import random
 
-def generate(num):
+def generate():
     counter = 0
-    n = num
+    n = random.randrange(1, 20)
     d = {}
     for i in range(n):
         d[i] = set()
