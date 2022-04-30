@@ -17,7 +17,7 @@ def main():
     edgeC = 0 # number of edges
     # setting up the graph and vertex set
     for _ in range(n):
-        edges = input().split(" ")
+        edges = [int(x) for x in input().split()]
         node = int(edges[0])
         vSet.append(node)
         g[node] = set() # every vertex corresponds to a set of edges
