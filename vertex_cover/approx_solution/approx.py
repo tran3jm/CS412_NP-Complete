@@ -1,3 +1,4 @@
+import time
 def main():
     n = int(input()) # number of vertices in graph
     g = {} # graph
@@ -28,11 +29,13 @@ def main():
             if visited[vertex]:
                 result.append(vertex)
         return result
+    start_time = time.time()
     res = approx()
     if len(res) == 0: print("There are no edges.")
     else:
         print("Min number:", len(res))
         print("Vertices:", *res)
+    print("--- %s seconds ---" % (time.time() - start_time))
 
 if __name__ == "__main__":
     main()
