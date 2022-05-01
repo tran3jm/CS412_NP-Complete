@@ -1,4 +1,4 @@
-
+import sys
 import random
 
 def generate():
@@ -12,11 +12,11 @@ def generate():
 
         nodes = random.randrange(0, n)
         
-        for j in range(nodes):
+        for _ in range(nodes):
 
             rand = random.randrange(0, n)
 
-            if j != rand and rand != i and i != j:
+            if rand != i and rand not in d[i]:
                 counter += 1
                 d[i].add(rand)
                 d[rand].add(i)
@@ -31,7 +31,7 @@ def generate():
     # print(counter)
 
 def main():
-    generate()
+    generate(int(sys.argv[1]))
 
 if __name__ == "__main__":    
     main()
