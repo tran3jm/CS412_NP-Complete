@@ -1,3 +1,0 @@
-Min number: 6
-Vertices: 0 1 2 3 6 8
---- 0.0 seconds ---
