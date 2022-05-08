@@ -53,6 +53,8 @@ for ((i = 1; i <= 20; i++)); do
 python ./cs412TestGen.py $i > ./generated/generated_test$i.txt
 done
 
+python ./cs412TestGen.py 28 > ./generated/generated_test_long_runtime.txt
+
 for file in ./generated/generated_test*.txt; do
     fileName=$(basename $file)
     # echo "EXACT $(basename $file .txt)"
